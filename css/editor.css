@@ -1,0 +1,115 @@
+.box{
+	border: 1px solid blue;
+	padding:0px;
+	margin:14px;
+}
+.boxc{
+	padding:10px;
+}
+
+.el-box-header {
+	background-color: #f5f7f5;
+	border-bottom: 1px solid #e6e6e6;
+	margin-bottom:15px;
+	padding: 5px 15px;
+	cursor:move;
+	xdisplay:none;
+	xposition: absolute;
+	xwidth:100%;
+}
+.row:hover .rowhandle.el-box-header,
+.col-editor-style:hover .colhandle.el-box-header,
+.element:hover .elementhandle.el-box-header
+{
+	background-color:#a6c39d;
+	xdisplay: block;
+}
+.handle{
+	text-align: right;
+}
+
+.handle .fa {
+	margin-left:8px;
+}
+.handle .fa:hover {
+	color:white;
+	cursor:pointer;
+}
+.handle .fa-arrows:hover{
+	cursor:move !important;
+}
+
+.row-editor-style {
+	background-color:rgba(0,0,0,0.015);
+	margin:10px 0px;
+	border:1px solid #e6e6e6;
+	padding-bottom: 15px;
+}
+
+.col-editor-style {
+	xbackground-color:rgba(0,0,0,0.02);
+	border:1px solid #e6e6e6;
+	xmargin:15px;
+}
+
+.colContainer{
+	min-height:50px;
+}
+.rowContainer{
+	min-height:50px;
+}
+.editorContainer{
+	min-height:150px;
+}
+
+.element {
+	margin:0px 10px 10px 10px;
+}
+.editorContainer .element {
+	background-color: white;
+	border:1px solid #e6e6e6;
+}
+.el-editor-content{
+	margin: 0px 15px 15px 15px;
+}
+
+.toolbox-element {
+	height:50px;
+}
+
+
+
+.d-modal-bg {
+    background-color: rgba(255,255,255,.95);
+    z-index: 9999999;
+    overflow-y: auto;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+    position: fixed;
+
+    opacity:0;
+    transition: opacity 2s;
+    -webkit-transition: opacity 2s; /* Safari */
+}
+.d-modal-content {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+.editor-tools-container {
+	position:fixed;
+	right:15px;
+	top: 20px;
+	width:150px;
+	border: 1px solid grey;
+}
+
+.editor-canvas-container {
+	margin: 10px 180px 15px 15px;
+
+
+}
