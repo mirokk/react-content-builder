@@ -24745,10 +24745,6 @@
 		value: true
 	});
 	
-	var _stringify = __webpack_require__(1);
-	
-	var _stringify2 = _interopRequireDefault(_stringify);
-	
 	var _getPrototypeOf = __webpack_require__(192);
 	
 	var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
@@ -24790,7 +24786,7 @@
 				field.hl
 			),
 			_react2.default.createElement('br', null),
-			_react2.default.createElement('textarea', { id: field.slug, value: value, onChange: handleChange })
+			_react2.default.createElement('textarea', { className: 'form-control', style: { height: "260px" }, id: field.slug, value: value, onChange: handleChange })
 		);
 	};
 	
@@ -24806,8 +24802,7 @@
 				null,
 				field.hl
 			),
-			_react2.default.createElement('br', null),
-			_react2.default.createElement('input', { id: field.slug, value: value, onChange: handleChange })
+			_react2.default.createElement('input', { className: 'form-control', id: field.slug, value: value, onChange: handleChange })
 		);
 	};
 	
@@ -24841,6 +24836,12 @@
 				this.toggle();
 			}
 		}, {
+			key: 'cancel',
+			value: function cancel() {
+				this.setState({ values: this.props.values });
+				this.toggle();
+			}
+		}, {
 			key: 'toggle',
 			value: function toggle() {
 				if (this.state.visible) {
@@ -24865,19 +24866,25 @@
 							'div',
 							{ className: 'd-modal-content' },
 							_react2.default.createElement(
-								'h1',
+								'h3',
 								null,
-								'Edit'
+								_react2.default.createElement('i', { className: 'fa fa-cubes green', 'aria-hidden': 'true' }),
+								' Edit Content'
 							),
-							(0, _stringify2.default)(this.state.values),
+							_react2.default.createElement('br', null),
 							this.props.fields.map(function (field) {
 								var Field = Fields[field.type];
 								return _react2.default.createElement(Field, { key: field.slug, field: field, value: _this2.state.values[field.slug], handleChange: _this2.handleChange.bind(_this2) });
 							}),
 							_react2.default.createElement(
-								'a',
-								{ onClick: this.save.bind(this) },
+								'button',
+								{ type: 'button', style: { float: "right" }, className: 'btn btn-success', onClick: this.save.bind(this) },
 								'Save'
+							),
+							_react2.default.createElement(
+								'button',
+								{ type: 'button', style: { float: "right", marginRight: "10px" }, className: 'btn btn-default', onClick: this.cancel.bind(this) },
+								'Cancel'
 							)
 						)
 					)
@@ -25071,11 +25078,11 @@
 	exports.default = function () {
 		return _react2.default.createElement(
 			'div',
-			{ className: 'toolbox editorTools editorContainer rowContainer colContainer container-fluid' },
+			{ className: 'toolbox editorTools editorContainer rowContainer colContainer' },
 			_react2.default.createElement(
-				'h3',
-				null,
-				'Tools'
+				'div',
+				{ className: 'toolbox-hl' },
+				'Elements:'
 			),
 			(0, _keys2.default)(_config2.default).map(function (type) {
 				var Element = _config2.default[type];
@@ -25092,7 +25099,7 @@
 			),
 			_react2.default.createElement(
 				'div',
-				{ className: 'toolbox-element colhandle', 'data-data': (0, _stringify2.default)({ width: "third" }) },
+				{ className: 'toolbox-element-col colhandle col-md-4', 'data-data': (0, _stringify2.default)({ width: "third" }) },
 				'Column'
 			)
 		);

@@ -13,16 +13,13 @@
 	margin-bottom:15px;
 	padding: 5px 15px;
 	cursor:move;
-	xdisplay:none;
-	xposition: absolute;
-	xwidth:100%;
 }
+
 .row:hover .rowhandle.el-box-header,
 .col-editor-style:hover .colhandle.el-box-header,
 .element:hover .elementhandle.el-box-header
 {
 	background-color:#a6c39d;
-	xdisplay: block;
 }
 .handle{
 	text-align: right;
@@ -47,9 +44,7 @@
 }
 
 .col-editor-style {
-	xbackground-color:rgba(0,0,0,0.02);
 	border:1px solid #e6e6e6;
-	xmargin:15px;
 }
 
 .colContainer{
@@ -73,11 +68,6 @@
 	margin: 0px 15px 15px 15px;
 }
 
-.toolbox-element {
-	height:50px;
-}
-
-
 
 .d-modal-bg {
     background-color: rgba(255,255,255,.95);
@@ -90,13 +80,16 @@
     text-align: center;
     position: fixed;
 
-    opacity:0;
-    transition: opacity 2s;
-    -webkit-transition: opacity 2s; /* Safari */
+    cursor: default;
 }
 .d-modal-content {
     margin-left: auto;
     margin-right: auto;
+    width:500px;
+    text-align: left;
+}
+.d-modal-content div {
+	margin-bottom: 20px;
 }
 
 
@@ -104,12 +97,36 @@
 	position:fixed;
 	right:15px;
 	top: 20px;
-	width:150px;
-	border: 1px solid grey;
+	width:190px;
+	background-color: #a6c39d;
+	padding: 5px 0px;
+}
+.toolbox-hl{
+	margin: 3px 15px 10px 15px;
+	xcolor:white;
+	font-weight: bold;
+}
+.editor-tools-container .toolbox-element-col {
+	width:170px !important;
+	padding:5px 15px !important;
+	margin: 0px 10px 3px 10px !important;
+}
+
+.toolbox-element {
+	background-color: #d8ead2;
+	padding:5px 15px;
+	margin: 3px 10px;
+	cursor: move;
+}
+.toolbox-element-col {
+	background-color: #d8ead2;
+	cursor: move;
 }
 
 .editor-canvas-container {
-	margin: 10px 180px 15px 15px;
+	margin: 10px 220px 15px 15px;
+}
 
-
+.green {
+	color:#8cc38c !important;
 }

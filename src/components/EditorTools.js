@@ -6,8 +6,8 @@ import Row from './Row'
 import Col from './Col'
 
 export default ()=>(
-	<div className="toolbox editorTools editorContainer rowContainer colContainer container-fluid">
-		<h3>Tools</h3>
+	<div className="toolbox editorTools editorContainer rowContainer colContainer">
+		<div className="toolbox-hl">Elements:</div>
 		{	
 			Object.keys(ElementConfig).map(function (type) {
 				let Element = ElementConfig[type];
@@ -21,7 +21,7 @@ export default ()=>(
 		<div className="toolbox-element rowhandle" data-data="{}" >
 			Row
 		</div>
-		<div className="toolbox-element colhandle" data-data={JSON.stringify({width:"third"})} >
+		<div className="toolbox-element-col colhandle col-md-4" data-data={JSON.stringify({width:"third"})} >
 			Column
 		</div>
 	</div>

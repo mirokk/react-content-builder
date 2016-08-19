@@ -5,14 +5,14 @@ const Fields = {};
 Fields['TextArea'] = ({field, value, handleChange})=>(
 	<div>
 		<strong>{field.hl}</strong><br />
-		<textarea id={field.slug} value={value} onChange={handleChange}/>
+		<textarea className="form-control" style={{height:"260px"}} id={field.slug} value={value} onChange={handleChange}/>
 	</div>
 )
 
 Fields['Input'] = ({field, value, handleChange})=>(
 	<div>
-		<strong>{field.hl}</strong><br />
-		<input id={field.slug} value={value} onChange={handleChange} />
+		<strong>{field.hl}</strong>
+		<input className="form-control" id={field.slug} value={value} onChange={handleChange} />
 	</div>
 )
 
@@ -38,6 +38,11 @@ export default class Form extends React.Component {
 		this.toggle();
 	}
 
+	cancel(){
+		this.setState({values:this.props.values});
+		this.toggle();
+	}
+
 	toggle(){
 		if (this.state.visible){
 			this.setState({visible: false});
@@ -52,7 +57,7 @@ export default class Form extends React.Component {
 				<i onClick={this.toggle.bind(this)} className="fa fa-pencil" aria-hidden="true"></i>
 				<div id={"form"+this.props.id} className="d-modal-bg" style={this.state.visible?{display:'block', opacity:1}:{display:'none'}}>
 			        <div className="d-modal-content">
-			          <h1>Edit</h1>{JSON.stringify(this.state.values)}
+			          <h3><i className="fa fa-cubes green" aria-hidden="true"></i> Edit Content</h3><br />
 			          {
 			          	this.props.fields.map((field)=>{
 			          		let Field = Fields[field.type];
@@ -61,7 +66,8 @@ export default class Form extends React.Component {
 			          		);
 			          	})
 			          }
-			          <a onClick={this.save.bind(this)}>Save</a>
+			          <button type="button" style={{float:"right"}} className="btn btn-success" onClick={this.save.bind(this)}>Save</button>
+			          <button type="button" style={{float:"right", marginRight:"10px"}} className="btn btn-default" onClick={this.cancel.bind(this)}>Cancel</button>
 			        </div>
 			        
 			    </div>
