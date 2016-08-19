@@ -33,7 +33,7 @@ Fields['TextArea'] = function (_ref) {
 			field.hl
 		),
 		_react2['default'].createElement('br', null),
-		_react2['default'].createElement('textarea', { id: field.slug, value: value, onChange: handleChange })
+		_react2['default'].createElement('textarea', { className: 'form-control', style: { height: "260px" }, id: field.slug, value: value, onChange: handleChange })
 	);
 };
 
@@ -49,8 +49,7 @@ Fields['Input'] = function (_ref2) {
 			null,
 			field.hl
 		),
-		_react2['default'].createElement('br', null),
-		_react2['default'].createElement('input', { id: field.slug, value: value, onChange: handleChange })
+		_react2['default'].createElement('input', { className: 'form-control', id: field.slug, value: value, onChange: handleChange })
 	);
 };
 
@@ -82,6 +81,12 @@ var Form = (function (_React$Component) {
 			this.toggle();
 		}
 	}, {
+		key: 'cancel',
+		value: function cancel() {
+			this.setState({ values: this.props.values });
+			this.toggle();
+		}
+	}, {
 		key: 'toggle',
 		value: function toggle() {
 			if (this.state.visible) {
@@ -106,19 +111,25 @@ var Form = (function (_React$Component) {
 						'div',
 						{ className: 'd-modal-content' },
 						_react2['default'].createElement(
-							'h1',
+							'h3',
 							null,
-							'Edit'
+							_react2['default'].createElement('i', { className: 'fa fa-cubes green', 'aria-hidden': 'true' }),
+							' Edit Content'
 						),
-						JSON.stringify(this.state.values),
+						_react2['default'].createElement('br', null),
 						this.props.fields.map(function (field) {
 							var Field = Fields[field.type];
 							return _react2['default'].createElement(Field, { key: field.slug, field: field, value: _this.state.values[field.slug], handleChange: _this.handleChange.bind(_this) });
 						}),
 						_react2['default'].createElement(
-							'a',
-							{ onClick: this.save.bind(this) },
+							'button',
+							{ type: 'button', style: { float: "right" }, className: 'btn btn-success', onClick: this.save.bind(this) },
 							'Save'
+						),
+						_react2['default'].createElement(
+							'button',
+							{ type: 'button', style: { float: "right", marginRight: "10px" }, className: 'btn btn-default', onClick: this.cancel.bind(this) },
+							'Cancel'
 						)
 					)
 				)

@@ -25,11 +25,13 @@ export default class Element extends React.Component {
 
 		let ElC = ElementConfig[this.state.type];
 
+		let rid="rid-"+Math.random();
+
 		if (this.props.isEditor){
 			return(
-				<div className="element" data-data={JSON.stringify(this.state)}>
+				<div id={rid} className="element" data-data={JSON.stringify(this.state)}>
 					<div className="elementhandle el-box-header">					
-						<Handle clazz="elementhandle">
+						<Handle clazz="elementhandle" rid={rid} >
 							<Form fields={ElC.fields} values={this.state.params} save={this.save.bind(this)} />
 						</Handle>
 					</div>

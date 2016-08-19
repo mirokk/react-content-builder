@@ -29,11 +29,11 @@ var _Col2 = _interopRequireDefault(_Col);
 exports['default'] = function () {
 	return _react2['default'].createElement(
 		'div',
-		{ className: 'toolbox editorTools editorContainer rowContainer colContainer container-fluid' },
+		{ className: 'toolbox editorTools editorContainer rowContainer colContainer' },
 		_react2['default'].createElement(
-			'h3',
-			null,
-			'Tools'
+			'div',
+			{ className: 'toolbox-hl' },
+			'Elements:'
 		),
 		Object.keys(_configElements2['default']).map(function (type) {
 			var Element = _configElements2['default'][type];
@@ -50,7 +50,7 @@ exports['default'] = function () {
 		),
 		_react2['default'].createElement(
 			'div',
-			{ className: 'toolbox-element colhandle', 'data-data': JSON.stringify({ width: "third" }) },
+			{ className: 'toolbox-element-col colhandle col-md-4', 'data-data': JSON.stringify({ width: "third" }) },
 			'Column'
 		)
 	);

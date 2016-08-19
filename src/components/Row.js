@@ -9,10 +9,11 @@ export default ({row, isEditor=false})=>{
 	}
 
 	if (isEditor){ 
+		let rid="rid-"+Math.random();
 		return(
-			<div className="row row-editor-style">
+			<div id={rid} className="row row-editor-style">
 				<div className="rowhandle el-box-header">
-					<Handle clazz="rowhandle" />
+					<Handle clazz="rowhandle" rid={rid} />
 				</div>
 				<ColList cols={cols} isEditor={isEditor} />
 			</div>

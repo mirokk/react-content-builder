@@ -28,6 +28,10 @@ var _Row2 = _interopRequireDefault(_Row);
 
 var _order = require('../order');
 
+var _initdragula = require('../initdragula');
+
+var _initdragula2 = _interopRequireDefault(_initdragula);
+
 var EditorCanvasInner = function EditorCanvasInner(_ref) {
 	var content = _ref.content;
 	var save = _ref.save;
@@ -71,6 +75,11 @@ var EditorCanvas = (function (_React$Component) {
 	}
 
 	_createClass(EditorCanvas, [{
+		key: 'componentDidMount',
+		value: function componentDidMount() {
+			(0, _initdragula2['default'])();
+		}
+	}, {
 		key: 'render',
 		value: function render() {
 			return _react2['default'].createElement(EditorCanvasInner, { key: "e" + Date.now(), content: this.state.content, save: this.props.save });

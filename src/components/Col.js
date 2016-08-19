@@ -40,13 +40,15 @@ export default class Col extends React.Component{
 		}
 
 		let key = 0;
+		let rid="rid-"+Math.random();
+
 		if (this.props.isEditor){
 			return(
-				<div className={gridClass} data-data={JSON.stringify(params)}>
+				<div id={rid} className={gridClass} data-data={JSON.stringify(params)}>
 				<div className="col-editor-style">
 					<div className="colhandle el-box-header">
 						
-						<Handle clazz="colhandle">
+						<Handle clazz="colhandle" rid={rid} >
 							<select value={params.width} onChange={this.handleChange.bind(this)}>
 								<option value="full">Full</option>
 								<option value="half">Half</option>
