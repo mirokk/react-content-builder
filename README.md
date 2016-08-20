@@ -11,6 +11,8 @@ Then:
 
 `import {Editor, Content} from 'react-content-builder';`
 
-`<Editor>`is the Content Builder part. It expects one parameter `content={content}` and one callback function `save={(content)=>{alert(content);}}`.
+`<Editor>` is the Content Builder part. It expects one parameter `content={content}` and one callback function `save={(content)=>{alert(content);}}`.
 
 The content then should be saved as a String in the database of your choice. To render the content type: `<Content content={content} />`
+
+**More documentation and sample implementations are comming soon..!**
