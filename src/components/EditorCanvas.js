@@ -30,7 +30,11 @@ export default class EditorCanvas extends React.Component{
 	
 	constructor(props){
 		super(props);
-		this.state= {content:props.content};
+		let content = props.content;
+		if (typeof content === 'undefined' || content === '' || content ===[] || content === null){
+			content = [{"cols":[{"params":{"width":"full"},"elements":[{"type":"Headline","params":{"hl":"react-content-builder"}},{"type":"Text","params":{"text":"This is a textblock"}}]}]}];
+		}
+		this.state= {content:content};
 		setCb((content)=>{
 			this.setState({content:content});
 		});

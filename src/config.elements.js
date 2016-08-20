@@ -1,4 +1,6 @@
 import React from 'react';
+import MarkDown from './components/MarkDown';
+
 
 export default {
 
@@ -13,7 +15,7 @@ export default {
 		],
 		template : ({params})=>(
 		  	<div>
-		  		{params.text}
+		  		<MarkDown>{params.text}</MarkDown>
 			</div>
 		)
 	},
@@ -40,20 +42,20 @@ export default {
 		name : "Text with headline",
 		fields : [
 			{
-				type : "TextArea",
-				slug : "text",
-				hl : "Content"
-			},
-			{
 				type : "Input",
 				slug : "hl",
 				hl : "Headline"
-			}     
+			},
+			{
+				type : "TextArea",
+				slug : "text",
+				hl : "Content"
+			}
 		],
 		template : ({params})=>(
 		  	<div>
 		  		<h1>{params.hl}</h1>
-				{params.text}
+				<MarkDown>{params.text}</MarkDown>
 			</div>
 		)
 	}

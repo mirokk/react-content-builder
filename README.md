@@ -1,9 +1,12 @@
 # react-content-builder
-Drag and drop content builder/editor for react applications.
+Drag and drop content builder/editor for react applications. It uses MarkDown instead of Wysiwyg.
 
-This is an exciting project, but still very **early in development, not production ready yet.** Expecting it to be more stable mid September.
+##Early development stage!
 
-It's easy to implement and configure to fit your needs.
+This is an exciting project, but still very early in development, not production ready yet. Expecting it to be more stable and more feature rich by mid or end of September. 
+
+
+It's easy to implement and configure to fit your needs. 
 
 How to use: `npm install --save react-content-builder`
 

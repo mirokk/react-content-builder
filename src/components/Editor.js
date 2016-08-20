@@ -12,8 +12,6 @@ export default ({content, save})=>(
 		</div>
 		<div className="editor-canvas-container">
 			<EditorCanvas content={content} save={save} />
-			<br /><br /><br /><br /><br /><br /><br />
-			<Content content={content} />
 		</div>
 	</div>
 );

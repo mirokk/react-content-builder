@@ -2,9 +2,8 @@ import React from 'react';
 import Row from './Row';
 
 
-export default ({content})=>{
+export default ({content=[]})=>{
 	let key = 0;
-	
 	return(		
 		<div className="container-fluid">
 		{

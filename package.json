@@ -3,6 +3,7 @@
   "version": "0.1.4",
   "main": "./dist/index.js",
   "dependencies": {
+    "micromarkdown": "^0.3.4-a",
     "react": "^15.3.0",
     "react-dom": "^15.3.0",
     "react-dragula": "^1.1.16"
