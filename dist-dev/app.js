@@ -21658,7 +21658,7 @@
 			),
 			_react2.default.createElement(
 				'button',
-				{ onClick: function onClick() {
+				{ type: 'button', style: { float: "right" }, className: 'btn btn-success', onClick: function onClick() {
 						save(content);
 					} },
 				'Save'

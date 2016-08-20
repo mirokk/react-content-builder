@@ -20,7 +20,7 @@ let EditorCanvasInner = ({content, save})=>{
 				})
 			}
 			</div>
-			<button onClick={()=>{save(content);}}>Save</button>
+			<button type="button" style={{float:"right"}} className="btn btn-success" onClick={()=>{save(content);}}>Save</button>
 		</div>
 		
 	);
