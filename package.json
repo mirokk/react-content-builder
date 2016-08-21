@@ -1,6 +1,6 @@
 {
   "name": "react-content-builder",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "main": "./dist/index.js",
   "dependencies": {
     "micromarkdown": "^0.3.4-a",

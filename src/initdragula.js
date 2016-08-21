@@ -1,7 +1,8 @@
 import dragula from 'react-dragula';
 import order from './order';
 
-export default ()=>{
+let initialized = false;
+let initialize = ()=>{
 	dragula({
 	  isContainer: function (el) {
 	    return el.classList.contains('editorContainer');
@@ -49,4 +50,10 @@ export default ()=>{
 	  }
 	})
 	.on('dragend', function (el) { order() });
+}
+export default ()=>{
+	if (!initialized){
+		initialize();
+		initialized=true;
+	}
 }
