@@ -29,13 +29,14 @@ exports['default'] = function (_ref) {
 	}
 
 	if (isEditor) {
+		var rid = "rid-" + Math.random();
 		return _react2['default'].createElement(
 			'div',
-			{ className: 'row row-editor-style' },
+			{ id: rid, className: 'row row-editor-style' },
 			_react2['default'].createElement(
 				'div',
 				{ className: 'rowhandle el-box-header' },
-				_react2['default'].createElement(_Handle2['default'], { clazz: 'rowhandle' })
+				_react2['default'].createElement(_Handle2['default'], { clazz: 'rowhandle', rid: rid })
 			),
 			_react2['default'].createElement(ColList, { cols: cols, isEditor: isEditor })
 		);

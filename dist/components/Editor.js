@@ -36,15 +36,7 @@ exports['default'] = function (_ref) {
 		_react2['default'].createElement(
 			'div',
 			{ className: 'editor-canvas-container' },
-			_react2['default'].createElement(_EditorCanvas2['default'], { content: content, save: save }),
-			_react2['default'].createElement('br', null),
-			_react2['default'].createElement('br', null),
-			_react2['default'].createElement('br', null),
-			_react2['default'].createElement('br', null),
-			_react2['default'].createElement('br', null),
-			_react2['default'].createElement('br', null),
-			_react2['default'].createElement('br', null),
-			_react2['default'].createElement(_Content2['default'], { content: content })
+			_react2['default'].createElement(_EditorCanvas2['default'], { content: content, save: save })
 		)
 	);
 };

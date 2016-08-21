@@ -59,16 +59,18 @@ var Element = (function (_React$Component) {
 
 			var ElC = _configElements2['default'][this.state.type];
 
+			var rid = "rid-" + Math.random();
+
 			if (this.props.isEditor) {
 				return _react2['default'].createElement(
 					'div',
-					{ className: 'element', 'data-data': JSON.stringify(this.state) },
+					{ id: rid, className: 'element', 'data-data': JSON.stringify(this.state) },
 					_react2['default'].createElement(
 						'div',
 						{ className: 'elementhandle el-box-header' },
 						_react2['default'].createElement(
 							_Handle2['default'],
-							{ clazz: 'elementhandle' },
+							{ clazz: 'elementhandle', rid: rid },
 							_react2['default'].createElement(_Form2['default'], { fields: ElC.fields, values: this.state.params, save: this.save.bind(this) })
 						)
 					),

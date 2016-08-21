@@ -51,7 +51,7 @@ var EditorCanvasInner = function EditorCanvasInner(_ref) {
 		),
 		_react2['default'].createElement(
 			'button',
-			{ onClick: function () {
+			{ type: 'button', style: { float: "right" }, className: 'btn btn-success', onClick: function () {
 					save(content);
 				} },
 			'Save'
@@ -68,7 +68,11 @@ var EditorCanvas = (function (_React$Component) {
 		_classCallCheck(this, EditorCanvas);
 
 		_get(Object.getPrototypeOf(EditorCanvas.prototype), 'constructor', this).call(this, props);
-		this.state = { content: props.content };
+		var content = props.content;
+		if (typeof content === 'undefined' || content === '' || content === [] || content === null) {
+			content = [{ "cols": [{ "params": { "width": "full" }, "elements": [{ "type": "Headline", "params": { "hl": "react-content-builder" } }, { "type": "Text", "params": { "text": "This is a textblock" } }] }] }];
+		}
+		this.state = { content: content };
 		(0, _order.setCb)(function (content) {
 			_this.setState({ content: content });
 		});

@@ -75,10 +75,12 @@ var Col = (function (_React$Component) {
 			}
 
 			var key = 0;
+			var rid = "rid-" + Math.random();
+
 			if (this.props.isEditor) {
 				return _react2['default'].createElement(
 					'div',
-					{ className: gridClass, 'data-data': JSON.stringify(params) },
+					{ id: rid, className: gridClass, 'data-data': JSON.stringify(params) },
 					_react2['default'].createElement(
 						'div',
 						{ className: 'col-editor-style' },
@@ -87,7 +89,7 @@ var Col = (function (_React$Component) {
 							{ className: 'colhandle el-box-header' },
 							_react2['default'].createElement(
 								_Handle2['default'],
-								{ clazz: 'colhandle' },
+								{ clazz: 'colhandle', rid: rid },
 								_react2['default'].createElement(
 									'select',
 									{ value: params.width, onChange: this.handleChange.bind(this) },
